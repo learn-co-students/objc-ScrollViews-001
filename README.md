@@ -1,7 +1,4 @@
----
-  tags: tutorial, beginner, OOP, Object-Oriented Programming, model 
-  languages: objc
----
+
 
 objc-ScrollViews
 ===============
