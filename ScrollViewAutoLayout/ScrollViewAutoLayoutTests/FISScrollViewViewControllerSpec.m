@@ -75,8 +75,22 @@ describe(@"FISScrollViewViewController", ^{
     });
     
     
-    //TODO: make lab include instructions for accessibilityLabels
+    //TODO: make lab include instructions for accessibilityLabel/Identifier
     describe(@"scrollView", ^{
+        
+        __block UIImageView *firstImageView;
+        __block UIImageView *secondImageView;
+        __block UIImageView *thirdImageView;
+        __block UIImageView *fourthImageView;
+        __block UIImageView *fifthImageView;
+        
+        beforeAll(^{
+            firstImageView = contentView.subviews[0];
+            secondImageView = contentView.subviews[1];
+            thirdImageView = contentView.subviews[2];
+            fourthImageView = contentView.subviews[3];
+            fifthImageView = contentView.subviews[4];
+        });
         
         beforeEach(^{
             // resets the scrollView to original position
@@ -84,30 +98,30 @@ describe(@"FISScrollViewViewController", ^{
         });
         
         it(@"shows first image pre-scrolling", ^{
-            UIImageView *firstImageView = contentView.subviews[0];
-            CGRect scrollViewBounds = scrollView.bounds;
-            CGRect firstImageViewFrame = firstImageView.frame;
             
-            BOOL firstIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, firstImageViewFrame);
+            BOOL firstIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, firstImageView.frame);
+            
             expect(firstIVframeIntersectsSVBounds).to.beTruthy();
-            ;
         });
         
-        it(@"does not show second image pre-scrolling", ^{
-            UIImageView *secondImageView = contentView.subviews[1];
-            CGRect scrollViewBounds = scrollView.bounds;
-            CGRect secondImageViewFrame = secondImageView.frame;
+        it(@"shows ONLY first image pre-scrolling", ^{
            
-            BOOL secondIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, secondImageViewFrame);
+            BOOL secondIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, secondImageView.frame);
+            BOOL thirdIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, thirdImageView.frame);
+            BOOL fourthIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, fourthImageView.frame);
+            BOOL fifthIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, fifthImageView.frame);
+            
             expect(secondIVframeIntersectsSVBounds).to.beFalsy();
+            expect(thirdIVframeIntersectsSVBounds).to.beFalsy();
+            expect(fourthIVframeIntersectsSVBounds).to.beFalsy();
+            expect(fifthIVframeIntersectsSVBounds).to.beFalsy();
         });
         
         it(@"shows second image when scrolled -0.2", ^{
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
-            UIImageView *secondImageView = contentView.subviews[1];
-            CGRect scrollViewBounds = scrollView.bounds;
-            CGRect secondImageViewFrame = secondImageView.frame;
-            BOOL secondIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, secondImageViewFrame);
+
+            BOOL secondIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, secondImageView.frame);
+            
             expect(secondIVframeIntersectsSVBounds).to.beTruthy();
         });
         
@@ -115,11 +129,8 @@ describe(@"FISScrollViewViewController", ^{
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             
-            UIImageView *thirdImageView = contentView.subviews[2];
-            CGRect scrollViewBounds = scrollView.bounds;
-            CGRect thirdImageViewFrame = thirdImageView.frame;
+            BOOL thirdIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, thirdImageView.frame);
             
-            BOOL thirdIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, thirdImageViewFrame);
             expect(thirdIVframeIntersectsSVBounds).to.beTruthy();
         });
 
@@ -128,11 +139,8 @@ describe(@"FISScrollViewViewController", ^{
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             
-            UIImageView *fourthImageView = contentView.subviews[3];
-            CGRect scrollViewBounds = scrollView.bounds;
-            CGRect fourthImageViewFrame = fourthImageView.frame;
+            BOOL fourthIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, fourthImageView.frame);
             
-            BOOL fourthIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, fourthImageViewFrame);
             expect(fourthIVframeIntersectsSVBounds).to.beTruthy();
         });
 
@@ -141,12 +149,9 @@ describe(@"FISScrollViewViewController", ^{
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
-
-            UIImageView *fifthImageView = contentView.subviews[4];
-            CGRect scrollViewBounds = scrollView.bounds;
-            CGRect fifthImageViewFrame = fifthImageView.frame;
             
-            BOOL fifthIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, fifthImageViewFrame);
+            BOOL fifthIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, fifthImageView.frame);
+            
             expect(fifthIVframeIntersectsSVBounds).to.beTruthy();
         });
     });

@@ -34,7 +34,7 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"-----------------------------");
+    NSLog(@"----------------------------------");
     NSLog(@"SV Frame: %@", NSStringFromCGRect(scrollView.frame));
     NSLog(@"SV Bounds: %@", NSStringFromCGRect(scrollView.bounds));
     NSLog(@"\n");
@@ -46,7 +46,7 @@
     NSLog(@"I3 Frame: %@", NSStringFromCGRect(self.thirdImageView.frame));
     NSLog(@"I4 Frame: %@", NSStringFromCGRect(self.fourthImageView.frame));
     NSLog(@"I5 Frame: %@", NSStringFromCGRect(self.fifthImageView.frame));
-    NSLog(@"-----------------------------");
+    NSLog(@"----------------------------------");
 }
 
 @end

@@ -50,7 +50,7 @@
 		CEB754393C05FA85058D159A /* Pods-ScrollViewAutoLayoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollViewAutoLayoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollViewAutoLayoutTests/Pods-ScrollViewAutoLayoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E25486E31B94849B000DA898 /* FISScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISScrollViewViewController.h; sourceTree = "<group>"; };
 		E25486E41B94849B000DA898 /* FISScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISScrollViewViewController.m; sourceTree = "<group>"; };
-		E25486E61B9484FC000DA898 /* FISScrollViewViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISScrollViewViewControllerSpec.m; sourceTree = "<group>"; };
+		E25486E61B9484FC000DA898 /* FISScrollViewViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FISScrollViewViewControllerSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E49A6EBB20146402F66FB58C /* libPods-ScrollViewAutoLayoutTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScrollViewAutoLayoutTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
