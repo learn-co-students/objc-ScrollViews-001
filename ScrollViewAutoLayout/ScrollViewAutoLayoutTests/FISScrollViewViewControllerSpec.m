@@ -20,6 +20,9 @@ describe(@"FISScrollViewViewController", ^{
     
     __block FISScrollViewViewController *scrollViewVC;
     __block UIScrollView *scrollView;
+    __block NSString *scrollViewAccessLabel;
+    __block UIView *contentView;
+
     
     beforeAll(^{
         UIWindow *mainWindow = ((AppDelegate*)[UIApplication sharedApplication].delegate).window;
@@ -27,47 +30,126 @@ describe(@"FISScrollViewViewController", ^{
         [mainWindow setRootViewController: scrollViewVC];
         [mainWindow makeKeyAndVisible];
         
-        scrollView = scrollViewVC.scrollView;
+        scrollViewAccessLabel = @"scrollView";
+        scrollView = (UIScrollView*)[tester waitForViewWithAccessibilityLabel:scrollViewAccessLabel];
+        contentView = scrollView.subviews[0];
     });
     
-    describe(@"scrollView", ^{
+    describe(@"basic setup", ^{
         
-        it(@"exists", ^{
-            expect(scrollView).notTo.beNil;
+        describe(@"scrollView", ^{
+            it(@"exists", ^{
+                expect(scrollView).notTo.beNil;
+            });
+            
+            it(@"has subviews", ^{
+                expect(scrollView.subviews.count).to.beGreaterThan(0);
+            });
+            
+            it(@"paging enabled", ^{
+                expect(scrollView.pagingEnabled).to.beTruthy;
+            });
         });
-        
-        it(@"has subviews", ^{
-            expect(scrollView.subviews.count).to.beGreaterThan(0);
+
+        describe(@"contentView", ^{
+            
+            //TODO: make lab explicitly ask for 5 imageViews
+            it(@"has 5 subviews", ^{
+                expect(contentView.subviews.count).to.equal(5);
+            });
+            
+            it(@"all subviews are imageViews", ^{
+                for(UIView *subview in contentView.subviews)
+                {
+                    expect(subview).to.beKindOf([UIImageView class]);
+                }
+            });
+            
+            it(@"all imageViews have images set", ^{
+                for(UIImageView *subview in contentView.subviews)
+                {
+                    expect(subview.image).toNot.beNil;
+                }
+            });
         });
     });
+    
+    
+    //TODO: make lab include instructions for accessibilityLabels
+    describe(@"scrollView", ^{
+        
+        beforeEach(^{
+            // resets the scrollView to original position
+            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:1.0 vertical:0];
+        });
+        
+        it(@"shows first image pre-scrolling", ^{
+            UIImageView *firstImageView = contentView.subviews[0];
+            CGRect scrollViewBounds = scrollView.bounds;
+            CGRect firstImageViewFrame = firstImageView.frame;
+            
+            BOOL firstIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, firstImageViewFrame);
+            expect(firstIVframeIntersectsSVBounds).to.beTruthy();
+            ;
+        });
+        
+        it(@"does not show second image pre-scrolling", ^{
+            UIImageView *secondImageView = contentView.subviews[1];
+            CGRect scrollViewBounds = scrollView.bounds;
+            CGRect secondImageViewFrame = secondImageView.frame;
+           
+            BOOL secondIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, secondImageViewFrame);
+            expect(secondIVframeIntersectsSVBounds).to.beFalsy();
+        });
+        
+        it(@"shows second image when scrolled -0.2", ^{
+            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
+            UIImageView *secondImageView = contentView.subviews[1];
+            CGRect scrollViewBounds = scrollView.bounds;
+            CGRect secondImageViewFrame = secondImageView.frame;
+            BOOL secondIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, secondImageViewFrame);
+            expect(secondIVframeIntersectsSVBounds).to.beTruthy();
+        });
+        
+        it(@"shows third image when scrolled -0.4", ^{
+            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
+            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
+            
+            UIImageView *thirdImageView = contentView.subviews[2];
+            CGRect scrollViewBounds = scrollView.bounds;
+            CGRect thirdImageViewFrame = thirdImageView.frame;
+            
+            BOOL thirdIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, thirdImageViewFrame);
+            expect(thirdIVframeIntersectsSVBounds).to.beTruthy();
+        });
 
-    describe(@"contentView", ^{
-        
-        __block UIView *contentView;
-        
-        beforeAll(^{
-            contentView = scrollView.subviews[0];
+        it(@"shows fourth image when scrolled -0.6", ^{
+            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
+            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
+            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
+            
+            UIImageView *fourthImageView = contentView.subviews[3];
+            CGRect scrollViewBounds = scrollView.bounds;
+            CGRect fourthImageViewFrame = fourthImageView.frame;
+            
+            BOOL fourthIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, fourthImageViewFrame);
+            expect(fourthIVframeIntersectsSVBounds).to.beTruthy();
         });
-        
-        //TODO: make lab explicitly ask for 5 imageViews
-        it(@"has 5 subviews", ^{
-            expect(contentView.subviews.count).to.equal(5);
+
+        it(@"shows last image when scrolled -0.8", ^{
+            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
+            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
+            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
+            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
+
+            UIImageView *fifthImageView = contentView.subviews[4];
+            CGRect scrollViewBounds = scrollView.bounds;
+            CGRect fifthImageViewFrame = fifthImageView.frame;
+            
+            BOOL fifthIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollViewBounds, fifthImageViewFrame);
+            expect(fifthIVframeIntersectsSVBounds).to.beTruthy();
         });
-        
-        it(@"subviews are all imageViews", ^{
-            for(UIView *subview in contentView.subviews)
-            {
-                expect(subview).to.beKindOf([UIImageView class]);
-            }
-        });
-        
-        it(@"has imageViews with images set", ^{
-            for(UIImageView *subview in contentView.subviews)
-            {
-                expect(subview.image).toNot.beNil;
-            }
-        });
-    });    
+    });
 });
 
 SpecEnd

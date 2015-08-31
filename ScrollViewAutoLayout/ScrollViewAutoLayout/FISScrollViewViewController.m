@@ -8,7 +8,14 @@
 
 #import "FISScrollViewViewController.h"
 
-@interface FISScrollViewViewController ()
+@interface FISScrollViewViewController () <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIImageView *firstImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *secondImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *thirdImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *fourthImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *fifthImageView;
+
 @end
 
 @implementation FISScrollViewViewController
@@ -17,21 +24,29 @@
     [super viewDidLoad];
 
     [self.scrollView setAccessibilityLabel: @"scrollView"];
+    [self.scrollView setAccessibilityIdentifier:@"scrollView"];
+    
+    
+    /* uncomment this, scroll and see the logs
+     to learn more about frame/bounds in scrollviews */
+//    self.scrollView.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"-----------------------------");
+    NSLog(@"SV Frame: %@", NSStringFromCGRect(scrollView.frame));
+    NSLog(@"SV Bounds: %@", NSStringFromCGRect(scrollView.bounds));
+    NSLog(@"\n");
+    NSLog(@"CV Frame: %@", NSStringFromCGRect(self.contentView.frame));
+    NSLog(@"CV Bounds: %@", NSStringFromCGRect(self.contentView.bounds));
+    NSLog(@"\n");
+    NSLog(@"I1 Frame: %@", NSStringFromCGRect(self.firstImageView.frame));
+    NSLog(@"I2 Frame: %@", NSStringFromCGRect(self.secondImageView.frame));
+    NSLog(@"I3 Frame: %@", NSStringFromCGRect(self.thirdImageView.frame));
+    NSLog(@"I4 Frame: %@", NSStringFromCGRect(self.fourthImageView.frame));
+    NSLog(@"I5 Frame: %@", NSStringFromCGRect(self.fifthImageView.frame));
+    NSLog(@"-----------------------------");
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
