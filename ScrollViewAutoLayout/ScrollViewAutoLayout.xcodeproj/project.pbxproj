@@ -16,6 +16,8 @@
 		6F73A4C81ADECAA5000A32DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F73A4C61ADECAA5000A32DD /* Main.storyboard */; };
 		6F73A4CA1ADECAA5000A32DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F73A4C91ADECAA5000A32DD /* Images.xcassets */; };
 		6F73A4CD1ADECAA5000A32DD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F73A4CB1ADECAA5000A32DD /* LaunchScreen.xib */; };
+		E25486E51B94849B000DA898 /* FISScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E25486E41B94849B000DA898 /* FISScrollViewViewController.m */; };
+		E25486E71B9484FC000DA898 /* FISScrollViewViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E25486E61B9484FC000DA898 /* FISScrollViewViewControllerSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,9 @@
 		6F73A4D71ADECAA5000A32DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A888F34AD1795ACF361542BA /* Pods-ScrollViewAutoLayoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollViewAutoLayoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollViewAutoLayoutTests/Pods-ScrollViewAutoLayoutTests.release.xcconfig"; sourceTree = "<group>"; };
 		CEB754393C05FA85058D159A /* Pods-ScrollViewAutoLayoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollViewAutoLayoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollViewAutoLayoutTests/Pods-ScrollViewAutoLayoutTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E25486E31B94849B000DA898 /* FISScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISScrollViewViewController.h; sourceTree = "<group>"; };
+		E25486E41B94849B000DA898 /* FISScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISScrollViewViewController.m; sourceTree = "<group>"; };
+		E25486E61B9484FC000DA898 /* FISScrollViewViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISScrollViewViewControllerSpec.m; sourceTree = "<group>"; };
 		E49A6EBB20146402F66FB58C /* libPods-ScrollViewAutoLayoutTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScrollViewAutoLayoutTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +118,8 @@
 				6F73A4C31ADECAA5000A32DD /* ViewController.h */,
 				6F73A4C41ADECAA5000A32DD /* ViewController.m */,
 				6F73A4C61ADECAA5000A32DD /* Main.storyboard */,
+				E25486E31B94849B000DA898 /* FISScrollViewViewController.h */,
+				E25486E41B94849B000DA898 /* FISScrollViewViewController.m */,
 				6F67D2391ADEF72100ECB7D8 /* CustomTableViewCell.h */,
 				6F67D23A1ADEF72100ECB7D8 /* CustomTableViewCell.m */,
 				6F67D23B1ADEF72100ECB7D8 /* CustomTableViewCell.xib */,
@@ -135,6 +142,7 @@
 		6F73A4D51ADECAA5000A32DD /* ScrollViewAutoLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
+				E25486E61B9484FC000DA898 /* FISScrollViewViewControllerSpec.m */,
 				6F73A4D61ADECAA5000A32DD /* Supporting Files */,
 			);
 			path = ScrollViewAutoLayoutTests;
@@ -288,6 +296,7 @@
 				6F73A4C21ADECAA5000A32DD /* AppDelegate.m in Sources */,
 				6F67D23C1ADEF72100ECB7D8 /* CustomTableViewCell.m in Sources */,
 				6F73A4BF1ADECAA5000A32DD /* main.m in Sources */,
+				E25486E51B94849B000DA898 /* FISScrollViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E25486E71B9484FC000DA898 /* FISScrollViewViewControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
