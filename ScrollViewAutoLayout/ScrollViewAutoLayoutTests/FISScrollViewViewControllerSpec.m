@@ -22,7 +22,7 @@ describe(@"FISScrollViewViewController", ^{
     __block UIScrollView *scrollView;
     __block NSString *scrollViewAccessLabel;
     __block UIView *contentView;
-
+    
     
     beforeAll(^{
         UIWindow *mainWindow = ((AppDelegate*)[UIApplication sharedApplication].delegate).window;
@@ -50,7 +50,7 @@ describe(@"FISScrollViewViewController", ^{
                 expect(scrollView.pagingEnabled).to.beTruthy;
             });
         });
-
+        
         describe(@"contentView", ^{
             
             //TODO: make lab explicitly ask for 5 imageViews
@@ -74,7 +74,6 @@ describe(@"FISScrollViewViewController", ^{
         });
     });
     
-    
     //TODO: make lab include instructions for accessibilityLabel/Identifier
     describe(@"scrollView", ^{
         
@@ -94,18 +93,11 @@ describe(@"FISScrollViewViewController", ^{
         
         beforeEach(^{
             // resets the scrollView to original position
-            [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:1.0 vertical:0];
+            [tester swipeViewWithAccessibilityLabel:scrollViewAccessLabel inDirection:KIFSwipeDirectionRight];
         });
         
-        it(@"shows first image pre-scrolling", ^{
+        it(@"shows ONLY first image prescrolling", ^{
             
-            BOOL firstIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, firstImageView.frame);
-            
-            expect(firstIVframeIntersectsSVBounds).to.beTruthy();
-        });
-        
-        it(@"shows ONLY first image pre-scrolling", ^{
-           
             BOOL secondIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, secondImageView.frame);
             BOOL thirdIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, thirdImageView.frame);
             BOOL fourthIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, fourthImageView.frame);
@@ -117,15 +109,22 @@ describe(@"FISScrollViewViewController", ^{
             expect(fifthIVframeIntersectsSVBounds).to.beFalsy();
         });
         
-        it(@"shows second image when scrolled -0.2", ^{
+        it(@"shows first image when scrolled 0x", ^{
+            
+            BOOL firstIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, firstImageView.frame);
+            
+            expect(firstIVframeIntersectsSVBounds).to.beTruthy();
+        });
+        
+        it(@"shows second image when scrolled 1x", ^{
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
-
+            
             BOOL secondIVframeIntersectsSVBounds = CGRectIntersectsRect(scrollView.bounds, secondImageView.frame);
             
             expect(secondIVframeIntersectsSVBounds).to.beTruthy();
         });
         
-        it(@"shows third image when scrolled -0.4", ^{
+        it(@"shows third image when scrolled 2x", ^{
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             
@@ -133,8 +132,8 @@ describe(@"FISScrollViewViewController", ^{
             
             expect(thirdIVframeIntersectsSVBounds).to.beTruthy();
         });
-
-        it(@"shows fourth image when scrolled -0.6", ^{
+        
+        it(@"shows fourth image when scrolled 3x", ^{
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
@@ -143,8 +142,8 @@ describe(@"FISScrollViewViewController", ^{
             
             expect(fourthIVframeIntersectsSVBounds).to.beTruthy();
         });
-
-        it(@"shows last image when scrolled -0.8", ^{
+        
+        it(@"shows last image when scrolled 4x", ^{
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
             [tester scrollViewWithAccessibilityIdentifier:scrollViewAccessLabel byFractionOfSizeHorizontal:(-0.2) vertical:0];
