@@ -6,12 +6,13 @@
 //  Copyright 2015 Flatiron. All rights reserved.
 //
 
-#import "Specta.h"
+#import <Specta/Specta.h>
 #define EXP_SHORTHAND
-#import "Expecta.h"
+#import <Expecta/Expecta.h>
+#import <KIF/KIF.h>
+
 #import "AppDelegate.h"
 #import "FISScrollViewViewController.h"
-
 
 SpecBegin(FISScrollViewViewController)
 
@@ -35,9 +36,8 @@ describe(@"FISScrollViewViewController", ^{
             expect(scrollView).notTo.beNil;
         });
         
-        it(@"has one contentView", ^{
-            expect(scrollView.subviews.count).to.equal(1);
-            expect(scrollView.subviews[0]).to.beKindOf([UIView class]);
+        it(@"has subviews", ^{
+            expect(scrollView.subviews.count).to.beGreaterThan(0);
         });
     });
 
@@ -60,7 +60,14 @@ describe(@"FISScrollViewViewController", ^{
                 expect(subview).to.beKindOf([UIImageView class]);
             }
         });
-    });
+        
+        it(@"has imageViews with images set", ^{
+            for(UIImageView *subview in contentView.subviews)
+            {
+                expect(subview.image).toNot.beNil;
+            }
+        });
+    });    
 });
 
 SpecEnd
