@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o4W-Ll-BIC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -80,18 +80,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="X0k-Lq-oni" firstAttribute="width" secondItem="eA1-4Q-dgB" secondAttribute="width" id="5UN-To-Wwv"/>
                                     <constraint firstItem="X0k-Lq-oni" firstAttribute="leading" secondItem="eA1-4Q-dgB" secondAttribute="leading" id="FIt-hE-cws"/>
                                     <constraint firstAttribute="bottom" secondItem="X0k-Lq-oni" secondAttribute="bottom" id="ac0-em-pvg"/>
                                     <constraint firstItem="X0k-Lq-oni" firstAttribute="top" secondItem="eA1-4Q-dgB" secondAttribute="top" id="e2e-OP-beg"/>
-                                    <constraint firstAttribute="height" constant="600" id="k6y-LY-baI"/>
                                     <constraint firstAttribute="trailing" secondItem="X0k-Lq-oni" secondAttribute="trailing" id="sc6-g9-l04"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5UN-To-Wwv"/>
-                                    </mask>
-                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
