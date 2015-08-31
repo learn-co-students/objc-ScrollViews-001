@@ -72,12 +72,17 @@ There are a few properties on ScrollViews that you'll need to be familiar with i
 
 ## Instructions 
 
-  - Create a ScrollView that has 5 pictures on it.  If you need a couple to get you started click [here](http://imgur.com/a/G1CIG)  The user should be able to scroll horizontally through the pictures and be presented one picture per page.  Do this with a ScrollView **not** a UIPageViewController 
-  - Create a custom UITableViewCell.  Embed your paging ScrollView from part 1 into that tableViewCell.  You should make it such that you can add load images into your custom cell via the TableView DataSource.  
+  - Create a ScrollView that has 5 pictures on it. The user should be able to scroll horizontally through the pictures and be presented one picture per *page*.  Do this with a ScrollView **not** a UIPageViewController.
+     - If you need a couple to get you started click [here](http://imgur.com/a/G1CIG).
+  - The `FISScrollViewViewController` class has already been made for you, use it.
+    - In `viewDidLoad`, set your scrollview's `accessibilityLabel` and `accessibilityIdentifier` both to `@"scrollView"` so you can run the tests when you're done. 
+    - also make sure you `pod install` ! (for tests) 
 
 ## Extra Credit
 
-In a separate View Controller, create a ScrollView that intercepts the action of the keyboard being presented or dismissed, and scrolls some form UI from the center of the screen to the top of the screen when present and back to the middle when dismissed.  
+- Create a custom UITableViewCell.  Embed your paging ScrollView from part 1 into that tableViewCell.  You should make it such that you can add load images into your custom cell via the TableView DataSource.  
+
+- In a separate View Controller, create a ScrollView that intercepts the action of the keyboard being presented or dismissed, and scrolls some form UI from the center of the screen to the top of the screen when present and back to the middle when dismissed.  
 
 Here is how you find out if the keyboard has appeared or disappeared 
 
