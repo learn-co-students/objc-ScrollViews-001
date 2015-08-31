@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0k-Lq-oni" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="2999" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="3000" height="600"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Winter-Tiger-Wild-Cat-Images" translatesAutoresizingMaskIntoConstraints="NO" id="EqL-N8-25l">
                                                 <rect key="frame" x="0.0" y="200" width="600" height="200"/>
@@ -30,37 +30,35 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird" translatesAutoresizingMaskIntoConstraints="NO" id="zj4-7i-ZiF">
-                                                <rect key="frame" x="599" y="200" width="600" height="200"/>
+                                                <rect key="frame" x="600" y="200" width="600" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="5eg-xg-Ysc"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="giraffe" translatesAutoresizingMaskIntoConstraints="NO" id="ER9-5C-Yw2">
-                                                <rect key="frame" x="1199" y="200" width="600" height="200"/>
+                                                <rect key="frame" x="1200" y="200" width="600" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="GKF-Kf-Gf1"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nice_peafowl" translatesAutoresizingMaskIntoConstraints="NO" id="twu-vE-0fZ">
-                                                <rect key="frame" x="1799" y="200" width="600" height="200"/>
+                                                <rect key="frame" x="1800" y="200" width="600" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="DeO-1D-YaS"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="original" translatesAutoresizingMaskIntoConstraints="NO" id="aID-IG-bea">
-                                                <rect key="frame" x="2399" y="200" width="600" height="200"/>
+                                                <rect key="frame" x="2400" y="200" width="600" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="mTB-TV-GEf"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="700" id="43Z-U7-dK3"/>
                                             <constraint firstAttribute="centerY" secondItem="ER9-5C-Yw2" secondAttribute="centerY" id="4fo-g5-FH5"/>
-                                            <constraint firstItem="zj4-7i-ZiF" firstAttribute="leading" secondItem="EqL-N8-25l" secondAttribute="trailing" constant="-1" id="65Y-8g-lhZ"/>
+                                            <constraint firstItem="zj4-7i-ZiF" firstAttribute="leading" secondItem="EqL-N8-25l" secondAttribute="trailing" id="65Y-8g-lhZ"/>
                                             <constraint firstItem="ER9-5C-Yw2" firstAttribute="leading" secondItem="zj4-7i-ZiF" secondAttribute="trailing" id="6MG-oJ-X0x"/>
                                             <constraint firstAttribute="centerY" secondItem="aID-IG-bea" secondAttribute="centerY" id="HSD-Hg-6sE"/>
-                                            <constraint firstAttribute="width" constant="2000" id="IYE-ce-24a"/>
                                             <constraint firstItem="EqL-N8-25l" firstAttribute="leading" secondItem="X0k-Lq-oni" secondAttribute="leading" id="LiI-Q4-zJ9"/>
                                             <constraint firstAttribute="centerY" secondItem="EqL-N8-25l" secondAttribute="centerY" id="kO4-Hj-agS"/>
                                             <constraint firstAttribute="centerY" secondItem="twu-vE-0fZ" secondAttribute="centerY" id="lte-HQ-nhq"/>
@@ -70,12 +68,6 @@
                                             <constraint firstAttribute="height" constant="600" id="uBI-X6-rO6"/>
                                             <constraint firstAttribute="trailing" secondItem="aID-IG-bea" secondAttribute="trailing" id="w3j-tv-7kY"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="43Z-U7-dK3"/>
-                                                <exclude reference="IYE-ce-24a"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,7 +93,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="X0k-Lq-oni" id="oOZ-Cv-Lgv"/>
+                        <outlet property="fifthImageView" destination="aID-IG-bea" id="ixi-mY-bWu"/>
+                        <outlet property="firstImageView" destination="EqL-N8-25l" id="gIN-xy-EsQ"/>
+                        <outlet property="fourthImageView" destination="twu-vE-0fZ" id="chp-Y9-ata"/>
                         <outlet property="scrollView" destination="eA1-4Q-dgB" id="zTC-uy-3AP"/>
+                        <outlet property="secondImageView" destination="zj4-7i-ZiF" id="UL2-i2-sAD"/>
+                        <outlet property="thirdImageView" destination="ER9-5C-Yw2" id="gxY-EZ-Cmu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
