@@ -10,4 +10,6 @@
 
 @interface FISScrollViewViewController : UIViewController
 
+-(UIColor *)randomColor;
+
 @end
