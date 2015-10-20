@@ -1,7 +1,3 @@
----
-  tags: tutorial, beginner, OOP, Object-Oriented Programming, model 
-  languages: objc
----
 
 objc-ScrollViews
 ===============
@@ -33,7 +29,7 @@ Apple offers this little snippet
 > - Position and size your ScrollView with constraints external to the ScrollView.
 > - Use constraints to lay out the subviews within the ScrollView, being sure that the constraints tie to all four edges of the ScrollView and do not rely on the ScrollView to get their size.
 
-Getting autolayout to work in the storyboard is the darkest form of magic.  But fear not, we can use the guidelines that Apple has provided to build an Auto-Layout enabled ScrollView without a single line of code.  Follow this formula and you're content will be scrolling in no time. Perhaps we can even make sense of what's happening when we're done.  
+Getting autolayout to work in the storyboard is the darkest form of magic.  But fear not, we can use the guidelines that Apple has provided to build an Auto-Layout enabled ScrollView without a single line of code.  Follow this formula and your content will be scrolling in no time. Perhaps we can even make sense of what's happening when we're done.  
 
 ###Paging 
 We're all familiar with paging in scroll views.  Paging allows you to autoscroll your view with a certain offset when the user pans in a given direction.  For example, a group of 4 pictures can be laid out horizontally such that there are 4 different pages, with each page enclosing an image.  Instead of fluid scrolling, your view will snap to the next image after you've scrolled a certain distance.  For the sake of brevity, you should lean on [the documentation](https://developer.apple.com/library/ios/documentation/windowsviews/conceptual/UIScrollView_pg/ScrollViewPagingMode/ScrollViewPagingMode.html) for configuring your pages.  But the two key properties you're concerned with in regards to paging are the ScrollView's contentSize and pagingMode.  
@@ -76,14 +72,17 @@ There are a few properties on ScrollViews that you'll need to be familiar with i
 
 ## Instructions 
 
-  - Create a ScrollView that has 5 pictures on it.  If you need a couple to get you started click [here](http://imgur.com/a/G1CIG)  The user should be able to scroll horizontally through the pictures and be presented one picture per page.  Do this with a ScrollView **not** a UIPageViewController 
-
-## Advanced
-  - Create a custom UITableViewCell.  Embed your paging ScrollView from part 1 into that tableViewCell.  You should make it such that you can add load images into your custom cell via the TableView DataSource.  
+  - Create a ScrollView that has 5 pictures on it. The user should be able to scroll horizontally through the pictures and be presented one picture per *page*.  Do this with a ScrollView **not** a UIPageViewController.
+     - If you need a couple to get you started click [here](http://imgur.com/a/G1CIG).
+  - The `FISScrollViewViewController` class has already been made for you, use it.
+    - In `viewDidLoad`, set your scrollview's `accessibilityLabel` and `accessibilityIdentifier` both to `@"scrollView"` so you can run the tests when you're done. 
+    - also make sure you `pod install` ! (for tests) 
 
 ## Extra Credit
 
-In a separate View Controller, create a ScrollView that intercepts the action of the keyboard being presented or dismissed, and scrolls some form UI from the center of the screen to the top of the screen when present and back to the middle when dismissed.  
+- Create a custom UITableViewCell.  Embed your paging ScrollView from part 1 into that tableViewCell.  You should make it such that you can add load images into your custom cell via the TableView DataSource.  
+
+- In a separate View Controller, create a ScrollView that intercepts the action of the keyboard being presented or dismissed, and scrolls some form UI from the center of the screen to the top of the screen when present and back to the middle when dismissed.  
 
 Here is how you find out if the keyboard has appeared or disappeared 
 
@@ -102,18 +101,18 @@ Here is how you find out if the keyboard has appeared or disappeared
                                                object:nil];
 }
 
+
 - (void)keyBoardWillShow:(NSNotification *)notification
 {
-	[UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:[notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue]]; //This gives you the duration of the keyboard appearance animation 
-    [UIView setAnimationCurve:[notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue]]; // This sets the curve of your animations to match that of the keyboard animation.  (It's not linear animation)
-    [UIView setAnimationBeginsFromCurrentState:YES];
+    // grab some values from the notification
+    double keyboardAnimationDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    NSInteger keyboardAnimationCurve = [notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
     
-    
-    // Here is where you change something to make it animate.  Sadly I haven't been able to port this hack over to block based animation.. yet 
-    
-    [UIView commitAnimations];
-
+    [UIView animateKeyframesWithDuration: keyboardAnimationDuration delay:0.0 options:keyboardAnimationCurve animations:^{
+        
+        // Here is where you change something to make it animate!
+        
+    } completion:nil];
 }
 ```
 ## Links

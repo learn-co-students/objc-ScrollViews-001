@@ -53,7 +53,6 @@ describe(@"FISScrollViewViewController", ^{
         
         describe(@"contentView", ^{
             
-            //TODO: make lab explicitly ask for 5 imageViews
             it(@"has 5 subviews", ^{
                 expect(contentView.subviews.count).to.equal(5);
             });
@@ -74,7 +73,6 @@ describe(@"FISScrollViewViewController", ^{
         });
     });
     
-    //TODO: make lab include instructions for accessibilityLabel/Identifier
     describe(@"scrollView", ^{
         
         __block UIImageView *firstImageView;
