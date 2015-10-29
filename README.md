@@ -16,7 +16,7 @@ UIScrollViews are key components of many different UIKit Classes.  They are the 
 
 Quite frankly, Autolayout wreaks havoc on ScrollViews.  So much so, that if you have Autolayout enabled, and you add a ScrollView to your project, it's very likely that nothing will happen.  No scrolling, no paging, nada.  
 
-But all is not lost! Apple has a **[somewhat useful little article](https://developer.apple.com/library/ios/technotes/tn2154/_index.html)** about working with ScrollViews in Autolayout-enabled projects.  I highly recommend at least scanning this doc before starting this lab.  We'll be using the "Mixed Approach", which basically uses Autolayout to position the ScrollView itself and the internal devices of the ScrollView to layout its' content.    
+But all is not lost! Apple has a **[somewhat useful little article](https://developer.apple.com/library/ios/technotes/tn2154/_index.html)** about working with ScrollViews in Autolayout-enabled projects.  I highly recommend at least scanning this doc before starting this lab.  We'll be using the "Mixed Approach", which basically uses Autolayout to position the ScrollView itself and the internal devices of the ScrollView to layout its content.    
 
 ###Pure Autolayout Approach 
 
@@ -47,12 +47,12 @@ We're all familiar with paging in scroll views.  Paging allows you to autoscroll
 - Select the ScrollView from the document outline and select the 'pin' icon to add new constraints. (It looks kind of like this |-|-|  ) 
 - Select each of the orange 'pin' icons around the bounding box (spacing to nearest neighbor) and ensure all of the spacing values are set to 0.  This operation should add 4 constraints, as shown at the bottom of the window.  
 - Select 'add 4 constraints'. 
-- Next, select the content view and add 0 pt spacing around each edge of its' bounds rect.  Also select the height constraint.  The height value should be greater than the height of the iPhone screen. 
+- Next, select the content view and add 0 pt spacing around each edge of its bounds rect.  Also select the height constraint.  The height value should be greater than the height of the iPhone screen. 
 - This time, select both the content view and the ScrollView -> add new constraints and select equal widths.  
 
 ###What did we just do? 
 
-OK, let's think about this.  There are a few things that have to go just right to allow the ScrollView to determine its' scrollable content size.
+OK, let's think about this.  There are a few things that have to go just right to allow the ScrollView to determine its scrollable content size.
 
 - **The ScrollView** - The ScrollView must have a concrete layout.  ie. It must know how to derive its width, height, and x/y position.  We did this by constraining the ScrollView to it's superview's (the default view) leading, trailing, top and bottom edges.  
 - **The content view** - 
