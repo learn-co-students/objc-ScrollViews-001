@@ -126,4 +126,4 @@ Here is how you find out if the keyboard has appeared or disappeared
 - Create a new ViewController, select it, show the 'Attributes Inspector'(the badge thingy?), and select freeform.  (This allows your ViewController to morph to sizes larger than the screen, which is great for laying out Scrollable content)
 - Select your view controller's default view, open the size inspector (the ruler) and set the height to something larger than the point size of a real iPhone screen, say 700.  
 
-<a href='https://learn.co/lessons/objc-ScrollViews' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/objc-ScrollViews' title='objc-ScrollViews'>objc-ScrollViews</a> on Learn.co and start learning to code for free.</p>
