@@ -1,25 +1,22 @@
 //
-//  FISScrollViewViewController.m
+//  FISScrollViewController.m
 //  ScrollViewAutoLayout
 //
-//  Created by Tom OMalley on 8/31/15.
-//  Copyright (c) 2015 Flatiron. All rights reserved.
+//  Created by Ken M. Haggerty on 2/12/16.
+//  Copyright © 2016 Flatiron. All rights reserved.
 //
 
-#import "FISScrollViewViewController.h"
+#import "FISScrollViewController.h"
 
-@interface FISScrollViewViewController ()
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@interface FISScrollViewController ()
+
 @end
 
-@implementation FISScrollViewViewController
+@implementation FISScrollViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self.scrollView setAccessibilityLabel:@"scrollView"];
-    [self.scrollView setAccessibilityIdentifier:@"scrollView"];
 }
 
 - (void)didReceiveMemoryWarning {
