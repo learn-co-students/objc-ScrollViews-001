@@ -41,8 +41,8 @@
 		CEB754393C05FA85058D159A /* Pods-ScrollViewAutoLayoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollViewAutoLayoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollViewAutoLayoutTests/Pods-ScrollViewAutoLayoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E25486E61B9484FC000DA898 /* FISScrollViewViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FISScrollViewViewControllerSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E2CB961A1B94D72800DA302A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E2CB961C1B94D74E00DA302A /* FISScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FISScrollViewViewController.h; path = ../FISScrollViewViewController.h; sourceTree = "<group>"; };
-		E2CB961D1B94D74E00DA302A /* FISScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FISScrollViewViewController.m; path = ../FISScrollViewViewController.m; sourceTree = "<group>"; };
+		E2CB961C1B94D74E00DA302A /* FISScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISScrollViewViewController.h; sourceTree = "<group>"; };
+		E2CB961D1B94D74E00DA302A /* FISScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISScrollViewViewController.m; sourceTree = "<group>"; };
 		E49A6EBB20146402F66FB58C /* libPods-ScrollViewAutoLayoutTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScrollViewAutoLayoutTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -172,6 +172,7 @@
 				6F73A4CF1ADECAA5000A32DD /* Frameworks */,
 				6F73A4D01ADECAA5000A32DD /* Resources */,
 				0FB169E4B6984BA147D28E55 /* Copy Pods Resources */,
+				53CC62BD3A59128263960E35 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +255,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrollViewAutoLayoutTests/Pods-ScrollViewAutoLayoutTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53CC62BD3A59128263960E35 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrollViewAutoLayoutTests/Pods-ScrollViewAutoLayoutTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F4B0990DE334D9E89E6BBD17 /* Check Pods Manifest.lock */ = {
