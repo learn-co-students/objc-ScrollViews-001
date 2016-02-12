@@ -9,7 +9,7 @@
 #import "FISScrollViewViewController.h"
 
 @interface FISScrollViewViewController ()
-
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @end
 
 @implementation FISScrollViewViewController
@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.scrollView setAccessibilityLabel:@"scrollView"];
+    [self.scrollView setAccessibilityIdentifier:@"scrollView"];
 }
 
 - (void)didReceiveMemoryWarning {

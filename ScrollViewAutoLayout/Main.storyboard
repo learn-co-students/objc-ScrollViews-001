@@ -83,20 +83,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOL-mL-8Lo">
                                         <rect key="frame" x="0.0" y="0.0" width="3000" height="600"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Zayn" translatesAutoresizingMaskIntoConstraints="NO" id="GiU-dx-HPW" userLabel="Image View 5">
-                                                <rect key="frame" x="2400" y="0.0" width="600" height="600"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Niall" translatesAutoresizingMaskIntoConstraints="NO" id="uRp-qs-13w" userLabel="Image View 4">
-                                                <rect key="frame" x="1800" y="0.0" width="600" height="600"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Louis" translatesAutoresizingMaskIntoConstraints="NO" id="uTY-WT-dLu" userLabel="Image View 3">
-                                                <rect key="frame" x="1200" y="0.0" width="600" height="600"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Harry" translatesAutoresizingMaskIntoConstraints="NO" id="dFk-Fl-fb6" userLabel="Image View 1">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Liam" translatesAutoresizingMaskIntoConstraints="NO" id="eWA-TJ-Xdm" userLabel="Image View 2">
                                                 <rect key="frame" x="600" y="0.0" width="600" height="600"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Harry" translatesAutoresizingMaskIntoConstraints="NO" id="dFk-Fl-fb6" userLabel="Image View 1">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Louis" translatesAutoresizingMaskIntoConstraints="NO" id="uTY-WT-dLu" userLabel="Image View 3">
+                                                <rect key="frame" x="1200" y="0.0" width="600" height="600"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Niall" translatesAutoresizingMaskIntoConstraints="NO" id="uRp-qs-13w" userLabel="Image View 4">
+                                                <rect key="frame" x="1800" y="0.0" width="600" height="600"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Zayn" translatesAutoresizingMaskIntoConstraints="NO" id="GiU-dx-HPW" userLabel="Image View 5">
+                                                <rect key="frame" x="2400" y="0.0" width="600" height="600"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -154,6 +154,9 @@
                             <constraint firstItem="bky-iK-shj" firstAttribute="centerX" secondItem="wmZ-g4-MwV" secondAttribute="centerX" id="rqS-ca-tlQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="bky-iK-shj" id="nj9-bq-XNh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xs-kj-u3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
