@@ -12,6 +12,9 @@
 		6F73A4C21ADECAA5000A32DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F73A4C11ADECAA5000A32DD /* AppDelegate.m */; };
 		6F73A4CA1ADECAA5000A32DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F73A4C91ADECAA5000A32DD /* Images.xcassets */; };
 		6F73A4CD1ADECAA5000A32DD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F73A4CB1ADECAA5000A32DD /* LaunchScreen.xib */; };
+		7D1446A11C6E29530058C1F5 /* FISTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14469F1C6E29530058C1F5 /* FISTableViewCell.m */; };
+		7D1446A21C6E29530058C1F5 /* FISTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1446A01C6E29530058C1F5 /* FISTableViewCell.xib */; };
+		7D1446A51C6E2AD20058C1F5 /* FISTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1446A41C6E2AD20058C1F5 /* FISTableViewController.m */; };
 		E25486E71B9484FC000DA898 /* FISScrollViewViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E25486E61B9484FC000DA898 /* FISScrollViewViewControllerSpec.m */; };
 		E2CB961B1B94D72800DA302A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CB961A1B94D72800DA302A /* Main.storyboard */; };
 		E2CB961E1B94D74E00DA302A /* FISScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CB961D1B94D74E00DA302A /* FISScrollViewViewController.m */; };
@@ -37,6 +40,11 @@
 		6F73A4CC1ADECAA5000A32DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6F73A4D21ADECAA5000A32DD /* ScrollViewAutoLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollViewAutoLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F73A4D71ADECAA5000A32DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D14469E1C6E29530058C1F5 /* FISTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISTableViewCell.h; sourceTree = "<group>"; };
+		7D14469F1C6E29530058C1F5 /* FISTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISTableViewCell.m; sourceTree = "<group>"; };
+		7D1446A01C6E29530058C1F5 /* FISTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FISTableViewCell.xib; sourceTree = "<group>"; };
+		7D1446A31C6E2AD20058C1F5 /* FISTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISTableViewController.h; sourceTree = "<group>"; };
+		7D1446A41C6E2AD20058C1F5 /* FISTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISTableViewController.m; sourceTree = "<group>"; };
 		A888F34AD1795ACF361542BA /* Pods-ScrollViewAutoLayoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollViewAutoLayoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollViewAutoLayoutTests/Pods-ScrollViewAutoLayoutTests.release.xcconfig"; sourceTree = "<group>"; };
 		CEB754393C05FA85058D159A /* Pods-ScrollViewAutoLayoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollViewAutoLayoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollViewAutoLayoutTests/Pods-ScrollViewAutoLayoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E25486E61B9484FC000DA898 /* FISScrollViewViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FISScrollViewViewControllerSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -109,6 +117,11 @@
 				6F73A4C11ADECAA5000A32DD /* AppDelegate.m */,
 				E2CB961C1B94D74E00DA302A /* FISScrollViewViewController.h */,
 				E2CB961D1B94D74E00DA302A /* FISScrollViewViewController.m */,
+				7D1446A31C6E2AD20058C1F5 /* FISTableViewController.h */,
+				7D1446A41C6E2AD20058C1F5 /* FISTableViewController.m */,
+				7D14469E1C6E29530058C1F5 /* FISTableViewCell.h */,
+				7D14469F1C6E29530058C1F5 /* FISTableViewCell.m */,
+				7D1446A01C6E29530058C1F5 /* FISTableViewCell.xib */,
 				E2CB961A1B94D72800DA302A /* Main.storyboard */,
 				6F73A4C91ADECAA5000A32DD /* Images.xcassets */,
 				6F73A4CB1ADECAA5000A32DD /* LaunchScreen.xib */,
@@ -227,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2CB961B1B94D72800DA302A /* Main.storyboard in Resources */,
+				7D1446A21C6E29530058C1F5 /* FISTableViewCell.xib in Resources */,
 				6F73A4CD1ADECAA5000A32DD /* LaunchScreen.xib in Resources */,
 				6F73A4CA1ADECAA5000A32DD /* Images.xcassets in Resources */,
 			);
@@ -295,8 +309,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2CB961E1B94D74E00DA302A /* FISScrollViewViewController.m in Sources */,
+				7D1446A11C6E29530058C1F5 /* FISTableViewCell.m in Sources */,
 				6F73A4C21ADECAA5000A32DD /* AppDelegate.m in Sources */,
 				6F73A4BF1ADECAA5000A32DD /* main.m in Sources */,
+				7D1446A51C6E2AD20058C1F5 /* FISTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
