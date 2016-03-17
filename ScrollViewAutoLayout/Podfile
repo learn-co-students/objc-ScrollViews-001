@@ -1,14 +1,6 @@
-
-source 'https://github.com/CocoaPods/Specs'
 platform :ios, '8.0'
 
-# Add Application pods here
-
-target 'ScrollViewAutoLayout' do
-
-end
-
-target :ScrollViewAutoLayoutTests, :exclusive => true do
+target 'ScrollViewAutoLayoutTests' do
   inhibit_all_warnings!
   link_with 'ScrollViewAutoLayoutTests'
 
