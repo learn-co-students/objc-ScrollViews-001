@@ -79,7 +79,7 @@ There are a few properties on scrollview that you'll need to be familiar with in
 
 ## Extra Credit
 
-- Create a custom UITableViewCell. Embed your paging ScrollView from part 1 into that cell. You should make it so that you can add load images into your custom cell via the tableview data source.  
+- Create a custom UITableViewCell. Embed your paging ScrollView from part 1 into that cell. You should make it so that you can load images into your custom cell via the tableview data source.  
 
 - In a separate view controller, create a simple form (a few textfields and maybe a button or two) in scrollview. Make the scrollview intercept the system notifications for the keyboard being presented or dismissed, and scroll the form out of the way of the keyboard when when the keyboard appears, and back down when it is dismissed.  
 
@@ -128,3 +128,5 @@ Here is how you find out if the keyboard will appear or disappear:
 - You could also select your view controller's default view, open the size inspector (the ruler) and set the height to something larger than the point size of a real iPhone screen, say 700.  
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/objc-ScrollViews' title='objc-ScrollViews'>objc-ScrollViews</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/objc-ScrollViews'>Scroll Views</a> on Learn.co and start learning to code for free.</p>
