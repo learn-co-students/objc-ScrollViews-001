@@ -87,6 +87,8 @@ describe(@"FISScrollViewViewController", ^{
             thirdImageView = contentView.subviews[2];
             fourthImageView = contentView.subviews[3];
             fifthImageView = contentView.subviews[4];
+            #warning - make sure your image views are "in order", tests wont work otherwise
+            // try re-ordering your image views in storyboard to match the order in which they appear
         });
         
         beforeEach(^{
